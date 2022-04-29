@@ -1,0 +1,13 @@
+2022-04-27 15:34:11.897 [main] DEBUG com.revature.dao.BankDriver - Failure at Login / Register..
+2022-04-27 15:35:25.167 [main] DEBUG com.revature.dao.BankDriver - Failure at Login / Register..
+2022-04-27 15:45:56.413 [main] ERROR com.revature.dao.AccountDAOImpl - FAILURE WITH RETRIEVING ALL ACCOUNTS FOR CUSTOMER:...micjor1
+2022-04-27 15:45:56.422 [main] DEBUG com.revature.dao.BankDriver - Failure at Login / Register..
+2022-04-27 15:47:14.478 [main] DEBUG com.revature.dao.BankDriver - Failure at Login / Register..
+2022-04-27 15:47:27.538 [main] ERROR com.revature.dao.AccountDAOImpl - FAILURE WITH RETRIEVING ALL ACCOUNTS FOR CUSTOMER:...micjor1
+2022-04-27 15:47:27.545 [main] ERROR com.revature.dao.AccountDAOImpl - ResultSet not positioned properly, perhaps you need to call next.
+2022-04-27 15:47:27.546 [main] DEBUG com.revature.dao.BankDriver - Failure at Login / Register..
+2022-04-27 16:55:41.944 [main] DEBUG com.revature.dao.BankDriver - Failure at Login / Register..
+2022-04-27 17:51:52.239 [main] ERROR com.revature.dao.EmployeeDAOImpl - null
+2022-04-27 17:55:34.865 [main] DEBUG com.revature.dao.BankDriver - Failure at Login / Register..
+2022-04-27 22:07:35.456 [main] ERROR com.revature.dao.AccountDAOImpl - null
+2022-04-27 22:07:35.465 [main] DEBUG com.revature.dao.AccountDAOImpl - INVALID INPUT TRY AGAIN...
