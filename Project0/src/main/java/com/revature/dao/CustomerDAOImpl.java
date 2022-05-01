@@ -133,6 +133,7 @@ public class CustomerDAOImpl implements CustomerDAO<Customer, String> {
 			Customer c = new Customer(username,password,firstname,lastname);
 			this.addCustomer(c);
 			System.out.println("welcome, " + c.getFirstname());
+			c= this.getCustomer(username);
 			return c;
 		}
 		return null;

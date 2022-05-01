@@ -58,7 +58,6 @@ public class AccountController {
 		dao.updateAccount(0,a.getAccountNumber());
 	};
 	
-	//////////////////// FIX THIS //////////////////
 	
 	//This is the 'DELETE' command
 	public Handler deleteHandler = ctx-> {

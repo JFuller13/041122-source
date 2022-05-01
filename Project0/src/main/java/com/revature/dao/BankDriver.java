@@ -16,6 +16,7 @@ import com.revature.model.Employee;
 import com.revature.model.JointAccount;
 
 import io.javalin.Javalin;
+import io.javalin.http.staticfiles.Location;
 
 public class BankDriver {
 	
@@ -34,7 +35,8 @@ public class BankDriver {
 	
 	public static void main(String[] args) {
 		
-		Javalin app = Javalin.create().start(7070);
+		Javalin app = Javalin.create(config -> {config.addStaticFiles("/html",Location.CLASSPATH);}).start(7070);
+		//Javalin app = Javalin.create().start(7070);
 		CustomerController  customerController = new CustomerController(app);
 		EmployeeController employeeController = new EmployeeController(app);
 		AccountController accController = new AccountController(app);
@@ -185,6 +187,7 @@ public class BankDriver {
 			//Customer Menu
 			if(menuChoice ==3) {
 			do {
+				currentUser = customerTable.getCustomer(currentUser.getUsername());
 				try {
 					System.out.println("Choose what transaction you want to perform...\n1)Open New Account\n2)Deposit\n3)Withdraw\n4)Transfer\n5)Display Accounts\n6)Logout");
 					scan = new Scanner(System.in);

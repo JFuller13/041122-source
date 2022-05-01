@@ -13,7 +13,6 @@ import org.apache.logging.log4j.Logger;
 
 import com.revature.model.Account;
 import com.revature.model.Customer;
-import com.revature.model.Employee;
 import com.revature.model.JointAccount;
 
 public class AccountDAOImpl implements AccountDAO {
@@ -209,11 +208,11 @@ public class AccountDAOImpl implements AccountDAO {
 			//Checking Account
 			if(choice==1) {
 				System.out.println("How much do you want to deposit into your checking account starting balance?");
-				double amount = scan.nextInt();
+				double amount = scan.nextDouble();
 				Account acc;
 				
 				while(true) {
-					acc = new Account("checking",c.getUsername(),amount);
+					acc = new Account("checking",c.getUsername(),Double.parseDouble(String.format("%.2f", amount)));
 					if(!this.existAccount(acc.getAccountNumber())) {
 						break;
 					}
@@ -225,11 +224,11 @@ public class AccountDAOImpl implements AccountDAO {
 				//Saving account
 				if(choice==2) {
 					System.out.println("How much do you want to deposit into your saving account starting balance?");
-					double amount = scan.nextInt();
+					double amount = scan.nextDouble();
 					Account acc = new Account("saving",c.getUsername(),amount);
 					
 					while(true) {
-						acc = new Account("saving",c.getUsername(),amount);
+						acc = new Account("saving",c.getUsername(),Double.parseDouble(String.format("%.2f", amount)));
 						if(!this.existAccount(acc.getAccountNumber())) {
 							break;
 						}
@@ -261,9 +260,9 @@ public class AccountDAOImpl implements AccountDAO {
 						ppl--;
 					}
 					System.out.println("How much do you want to deposit into your joint account starting balance?");
-					double amount = scan.nextInt();
+					double amount = scan.nextDouble();
 					
-					JointAccount acc = new JointAccount("joint",applicants,amount);
+					JointAccount acc = new JointAccount("joint",applicants,Double.parseDouble(String.format("%.2f", amount)));
 					this.addAccount(acc);
 					JointAccountDAOImpl joint = new JointAccountDAOImpl();
 					joint.createJointAccount(acc);
@@ -312,7 +311,7 @@ public class AccountDAOImpl implements AccountDAO {
 			PreparedStatement statement = ConnectionManager.getConnection().prepareStatement(query);
 			
 			//set the parameters int the query filter value
-			statement.setDouble(1, amount);
+			statement.setDouble(1, Double.parseDouble(String.format("%.2f", amount)));
 			statement.setInt(2, accountNumber);
 			
 			//Insert with this method
@@ -348,6 +347,7 @@ public class AccountDAOImpl implements AccountDAO {
 			
 				System.out.println("How much do you want to deposit?");
 				amount = scan.nextDouble();
+				amount = Double.parseDouble(String.format("%.2f", amount));
 				if(amount > 0) {
 					amount += temp.getBalance();
 				}else {System.out.println("NO NEGATIVE VALUES..\n");}
@@ -381,6 +381,8 @@ public class AccountDAOImpl implements AccountDAO {
 				account = scan.nextInt();
 				System.out.println("How much do you want to withdraw?");
 				amount = scan.nextDouble();
+				amount = Double.parseDouble(String.format("%.2f", amount));
+				
 				Account temp = this.getAccount(account);
 				oldBalance = temp.getBalance();
 				
@@ -429,7 +431,30 @@ public class AccountDAOImpl implements AccountDAO {
 				System.out.println("Which account do you want to transfer from?");
 				Scanner scan = new Scanner(System.in);
 				account = scan.nextInt();
-				Account sender = this.getAccount(c.getUsername(), account);
+				Account sender = this.getAccount(account);
+				
+				//CHECK if account is a joint and if the customer is a coOwner
+				if(sender.getAccountType().equalsIgnoreCase("joint") && sender.getConfirmation() == 1) {
+					JointAccountDAOImpl jaTable = new JointAccountDAOImpl();
+					
+					if(jaTable.existCoOwner(c.getUsername(), sender.getAccountNumber())) {
+						System.out.println("You are a co_owner..\n");
+							
+					}else {
+						
+						logger.info("FAILED: SORRY YOU DON'T HAVE ACCESS TO THIS ACCOUNT...");
+						break;}
+				}else {
+	
+					//This is a normal account
+					if(sender.getPrimaryOwner().equalsIgnoreCase(c.getUsername()) && sender.getConfirmation() == 1){
+							System.out.println("You are the primary owner...\n");
+					}else {
+				
+						logger.info("FAILED: You CAN NOT withdraw from this account...");
+						break;
+						}
+				}
 				
 				System.out.println("Which account do you want to transfer to?");
 				account = scan.nextInt();
@@ -440,6 +465,7 @@ public class AccountDAOImpl implements AccountDAO {
 				
 				System.out.println("How much do you want to transfer?");
 				amount = scan.nextDouble();
+				amount = Double.parseDouble(String.format("%.2f", amount));
 				
 				//Adjust balance for sender
 				double senderOldBalance=sender.getBalance();
@@ -454,7 +480,7 @@ public class AccountDAOImpl implements AccountDAO {
 					logger.info("Account number ["+sender.getAccountNumber()+"] has been updated to "+senderAmount+" from "+senderOldBalance+"\n");
 					logger.info("Account number ["+receiver.getAccountNumber()+"] has been updated to "+receiverAmount+" from "+receiverOldBalance+"\n");
 				}else {
-					logger.info("sender: "+c.getFirstname()+" "+c.getLastname()+" does not have enough to transfer");
+					logger.info("sender: "+c.getFirstname()+" "+c.getLastname()+" does not have enough to transfer.");
 				}
 			}while(account <100000000 || amount < 0);
 			

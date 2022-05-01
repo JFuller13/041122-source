@@ -17,7 +17,6 @@ public class EmployeeController {
 		app.post("/employees", postHandler);
 		app.put("/employees/{username}", putHandler);
 		app.delete("/employees/{username}", deleteHandler);
-		
 	}
 	
 	// this is the 'GET' command

@@ -40,6 +40,7 @@ public class Customer {
 	public void setUsername(String user) {this.username = user;}
 	public void setPassword(String pass) {this.password = pass;}
 	public void setfirstname(String firstname) {this.firstname = firstname;}
+	public void setLastname(String lastname) {this.lastname = lastname;}
 	public void addAccount(Account acc) {this.myAccounts.add(acc);}
 	public void addAccount(ArrayList<Account> a) {this.myAccounts.addAll(a);}
 

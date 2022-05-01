@@ -1,0 +1,74 @@
+2022-05-01 14:40:24.377 [main] ERROR com.revature.dao.AccountDAOImpl - null
+2022-05-01 14:40:24.381 [main] DEBUG com.revature.dao.AccountDAOImpl - INVALID INPUT TRY AGAIN...
+2022-05-01 14:41:33.380 [main] DEBUG com.revature.dao.BankDriver - Invalid input please use the commands provided
+2022-05-01 14:41:33.383 [main] ERROR com.revature.dao.BankDriver - null
+2022-05-01 14:41:55.727 [main] ERROR com.revature.dao.AccountDAOImpl - null
+2022-05-01 14:41:55.731 [main] DEBUG com.revature.dao.AccountDAOImpl - INVALID INPUT TRY AGAIN...
+2022-05-01 14:42:58.580 [main] ERROR com.revature.dao.AccountDAOImpl - null
+2022-05-01 14:42:58.583 [main] DEBUG com.revature.dao.AccountDAOImpl - INVALID INPUT TRY AGAIN...
+2022-05-01 14:43:27.504 [main] DEBUG com.revature.dao.BankDriver - Invalid input please use the commands provided
+2022-05-01 14:43:27.511 [main] ERROR com.revature.dao.BankDriver - null
+2022-05-01 14:52:50.659 [main] DEBUG com.revature.dao.AccountDAOImpl - FAILURE ADDING ACCOUNT account number [963128726]
+2022-05-01 14:52:50.665 [main] ERROR com.revature.dao.AccountDAOImpl - ERROR: insert or update on table "accounts" violates foreign key constraint "accounts_primary_owner_fkey"
+  Detail: Key (primary_owner)=(SecondRunner) is not present in table "customers".
+2022-05-01 15:02:36.418 [main] DEBUG com.revature.dao.BankDriver - Invalid input please use the commands provided
+2022-05-01 15:02:36.421 [main] ERROR com.revature.dao.BankDriver - null
+2022-05-01 15:25:21.101 [main] ERROR com.revature.dao.AccountDAOImpl - null
+2022-05-01 15:25:21.110 [main] DEBUG com.revature.dao.AccountDAOImpl - INVALID INPUT...
+2022-05-01 15:33:07.753 [main] INFO  com.revature.dao.AccountDAOImpl - Account [accountNumber=783458336, routingNumber=33453939257, accountType=saving, balance=3421.74000000001, primaryOwner=fourthrunner] has been updated to 3421.7400000000052 from 123421.97
+
+2022-05-01 15:36:21.297 [main] DEBUG com.revature.dao.BankDriver - INVALID INPUT TRY AGAIN...
+2022-05-01 15:36:21.301 [main] ERROR com.revature.dao.BankDriver - null
+2022-05-01 15:36:21.305 [main] DEBUG com.revature.dao.BankDriver - INVALID INPUT TRY AGAIN...
+2022-05-01 15:36:21.305 [main] ERROR com.revature.dao.BankDriver - null
+2022-05-01 15:36:21.306 [main] DEBUG com.revature.dao.BankDriver - INVALID INPUT TRY AGAIN...
+2022-05-01 15:36:21.306 [main] ERROR com.revature.dao.BankDriver - null
+2022-05-01 15:36:21.307 [main] DEBUG com.revature.dao.BankDriver - INVALID INPUT TRY AGAIN...
+2022-05-01 15:36:21.307 [main] ERROR com.revature.dao.BankDriver - null
+2022-05-01 15:37:59.255 [main] INFO  com.revature.dao.AccountDAOImpl - Account [accountNumber=297539023, routingNumber=74617322292, accountType=joint, balance=2800.11, primaryOwner=fourthrunner] has been updated to 2800.11 from 3000.46
+
+2022-05-01 15:43:24.638 [main] DEBUG com.revature.dao.BankDriver - Invalid input please use the commands provided
+2022-05-01 15:45:48.269 [main] INFO  com.revature.dao.AccountDAOImpl - Account [accountNumber=297539023, routingNumber=74617322292, accountType=joint, balance=5000.34, primaryOwner=fourthrunner] has been updated to 5000.34 from 2800.11
+
+2022-05-01 15:46:35.895 [main] ERROR com.revature.dao.AccountDAOImpl - Cannot invoke "com.revature.model.Account.getAccountNumber()" because "sender" is null
+2022-05-01 15:46:35.896 [main] DEBUG com.revature.dao.AccountDAOImpl - INVALID INPUT...
+2022-05-01 15:46:57.783 [main] ERROR com.revature.dao.AccountDAOImpl - For input string: "74617322292"
+2022-05-01 15:46:57.785 [main] DEBUG com.revature.dao.AccountDAOImpl - INVALID INPUT...
+2022-05-01 15:47:59.432 [main] ERROR com.revature.dao.AccountDAOImpl - Cannot invoke "com.revature.model.Account.getAccountNumber()" because "sender" is null
+2022-05-01 15:47:59.436 [main] DEBUG com.revature.dao.AccountDAOImpl - INVALID INPUT...
+2022-05-01 15:52:36.888 [main] DEBUG com.revature.dao.BankDriver - Invalid input please use the commands provided
+2022-05-01 15:52:36.900 [main] ERROR com.revature.dao.BankDriver - null
+2022-05-01 15:53:41.857 [main] ERROR com.revature.dao.AccountDAOImpl - Cannot invoke "com.revature.model.Account.getAccountNumber()" because "sender" is null
+2022-05-01 15:53:41.866 [main] DEBUG com.revature.dao.AccountDAOImpl - INVALID INPUT...
+2022-05-01 15:56:02.012 [main] DEBUG com.revature.dao.BankDriver - Invalid input please use the commands provided
+2022-05-01 15:57:22.550 [main] INFO  com.revature.dao.AccountDAOImpl - Account number [297539023] has been updated to 2778.1200000000003 from 5000.34
+
+2022-05-01 15:57:22.557 [main] INFO  com.revature.dao.AccountDAOImpl - Account number [819905128] has been updated to 5222.5599999999995 from 3000.34
+
+2022-05-01 16:02:59.618 [main] DEBUG com.revature.dao.BankDriver - Invalid input please use the commands provided
+2022-05-01 16:02:59.628 [main] ERROR com.revature.dao.BankDriver - null
+2022-05-01 16:03:32.750 [main] INFO  com.revature.dao.AccountDAOImpl - Account [accountNumber=297539023, routingNumber=74617322292, accountType=joint, balance=3013.69, primaryOwner=fourthrunner] has been updated to 3013.69 from 2778.12
+
+2022-05-01 16:05:57.103 [main] INFO  com.revature.dao.AccountDAOImpl - Account [accountNumber=297539023, routingNumber=74617322292, accountType=joint, balance=3313.69, primaryOwner=fourthrunner] has been updated to 3313.69 from 3013.69
+
+2022-05-01 16:08:09.407 [main] ERROR com.revature.dao.AccountDAOImpl - Cannot invoke "com.revature.model.Account.getAccountNumber()" because "sender" is null
+2022-05-01 16:08:09.408 [main] DEBUG com.revature.dao.AccountDAOImpl - INVALID INPUT...
+2022-05-01 16:35:08.207 [main] DEBUG com.revature.dao.BankDriver - Invalid input please use the commands provided
+2022-05-01 16:35:08.210 [main] ERROR com.revature.dao.BankDriver - null
+2022-05-01 16:35:55.995 [main] INFO  com.revature.dao.AccountDAOImpl - Account number [297539023] has been updated to 3113.69 from 3313.69
+
+2022-05-01 16:35:56.000 [main] INFO  com.revature.dao.AccountDAOImpl - Account number [819905128] has been updated to 5422.56 from 5222.56
+
+2022-05-01 16:37:41.405 [main] INFO  com.revature.dao.AccountDAOImpl - FAILED: SORRY YOU DON'T HAVE ACCESS TO THIS ACCOUNT...
+2022-05-01 16:39:19.851 [main] INFO  com.revature.dao.AccountDAOImpl - Account number [297539023] has been updated to 2991.4500000000003 from 3113.69
+
+2022-05-01 16:39:19.853 [main] INFO  com.revature.dao.AccountDAOImpl - Account number [819905128] has been updated to 5544.8 from 5422.56
+
+2022-05-01 17:21:58.070 [main] DEBUG com.revature.dao.BankDriver - INVALID INPUT TRY AGAIN...
+2022-05-01 17:21:58.077 [main] ERROR com.revature.dao.BankDriver - null
+2022-05-01 17:21:58.093 [main] DEBUG com.revature.dao.BankDriver - INVALID INPUT TRY AGAIN...
+2022-05-01 17:21:58.095 [main] ERROR com.revature.dao.BankDriver - null
+2022-05-01 17:21:58.097 [main] DEBUG com.revature.dao.BankDriver - INVALID INPUT TRY AGAIN...
+2022-05-01 17:21:58.098 [main] ERROR com.revature.dao.BankDriver - null
+2022-05-01 17:21:58.099 [main] DEBUG com.revature.dao.BankDriver - INVALID INPUT TRY AGAIN...
+2022-05-01 17:21:58.099 [main] ERROR com.revature.dao.BankDriver - null

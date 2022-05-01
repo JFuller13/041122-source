@@ -19,6 +19,10 @@ public class CustomerController {
 		app.put("/customers/{username}", putHandler);
 		app.delete("/customers/{username}", deleteHandler);
 		
+		
+		//TESTING FORM on post...
+		//app.post("/signup", postHandler2);
+		app.put("/editcustomer/{username}", putHandler2);
 	}
 	
 	public Handler getHandler = ctx -> {
@@ -49,7 +53,7 @@ public class CustomerController {
 		//AS best practice have status codes
 		ctx.status(205);
 	};
-		
+	
 	//This is the 'UPDATE' command
 	public Handler putHandler = ctx -> {
 		Customer customer = ctx.bodyAsClass(Customer.class);
@@ -66,6 +70,30 @@ public class CustomerController {
 		dao.delete(customer);
 		
 		ctx.status(200);
+	};
+	
+	//This is the 'create' command, but in a Form
+	public Handler postHandler2 = ctx -> {
+		Customer c = new Customer();
+		
+		c.setUsername(ctx.formParam("username"));
+		c.setPassword(ctx.formParam("password"));
+		c.setfirstname(ctx.formParam("firstname"));
+		c.setLastname(ctx.formParam("lastname"));
+		
+		CustomerDAOImpl dao = new CustomerDAOImpl();
+		dao.addCustomer(c);
+		
+		ctx.status(205);
+	};
+	
+	//This is the 'UPDATE' command in a form
+	public Handler putHandler2 = ctx -> {
+		Customer customer = ctx.bodyAsClass(Customer.class);
+			
+		dao.update(customer);
+			
+		ctx.status(210);
 	};
 
 }
