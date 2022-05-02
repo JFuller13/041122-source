@@ -72,3 +72,24 @@
 2022-05-01 17:21:58.098 [main] ERROR com.revature.dao.BankDriver - null
 2022-05-01 17:21:58.099 [main] DEBUG com.revature.dao.BankDriver - INVALID INPUT TRY AGAIN...
 2022-05-01 17:21:58.099 [main] ERROR com.revature.dao.BankDriver - null
+2022-05-01 18:04:27.308 [main] ERROR com.revature.dao.AccountDAOImpl - null
+2022-05-01 18:04:27.316 [main] DEBUG com.revature.dao.AccountDAOImpl - INVALID INPUT TRY AGAIN...
+2022-05-01 18:04:50.941 [main] INFO  com.revature.dao.AccountDAOImpl - Account [accountNumber=783458336, routingNumber=33453939257, accountType=saving, balance=3441.74, primaryOwner=fourthrunner] has been updated to 3441.74000000001 from 3421.74000000001
+
+2022-05-01 18:07:59.382 [main] DEBUG com.revature.dao.BankDriver - Invalid input please use the commands provided
+2022-05-01 18:07:59.391 [main] ERROR com.revature.dao.BankDriver - null
+2022-05-01 22:24:36.075 [main] ERROR com.revature.dao.AccountDAOImpl - Cannot invoke "com.revature.model.Account.getBalance()" because "temp" is null
+2022-05-01 22:24:36.082 [main] DEBUG com.revature.dao.AccountDAOImpl - INVALID INPUT...
+2022-05-01 22:25:46.940 [main] ERROR com.revature.dao.AccountDAOImpl - null
+2022-05-01 22:25:46.946 [main] DEBUG com.revature.dao.AccountDAOImpl - INVALID INPUT...
+2022-05-01 22:26:02.464 [main] DEBUG com.revature.dao.BankDriver - Invalid input please use the commands provided
+2022-05-01 22:26:02.469 [main] ERROR com.revature.dao.BankDriver - null
+2022-05-01 22:29:00.399 [main] INFO  com.revature.dao.AccountDAOImpl - Account [accountNumber=433460030, routingNumber=58537145852, accountType=joint, balance=3678.35, primaryOwner=sixthrunner] has been updated to 3678.35 from 3444.0
+
+2022-05-01 22:29:31.698 [main] INFO  com.revature.dao.AccountDAOImpl - Account [accountNumber=399437729, routingNumber=80594153880, accountType=checking, balance=103.35, primaryOwner=sixthrunner] has been updated to 103.35 from 123.35
+
+2022-05-01 22:30:06.178 [main] INFO  com.revature.dao.AccountDAOImpl - Account number [433460030] has been updated to 3478.35 from 3678.35
+
+2022-05-01 22:30:06.181 [main] INFO  com.revature.dao.AccountDAOImpl - Account number [575683103] has been updated to 324.0 from 124.0
+
+2022-05-01 23:55:56.451 [main] DEBUG com.revature.dao.BankDriver - Invalid input please use the commands provided

@@ -196,6 +196,28 @@ public class AccountDAOImpl implements AccountDAO {
 		return false;
 	}
 	
+	public boolean existRoutingNumber(long routingNum) {
+		conn = ConnectionManager.getConnection();
+
+		try {
+			//Step 1
+			String query = "SELECT * FROM Accounts WHERE routing_number = ?";
+			PreparedStatement statement = ConnectionManager.getConnection().prepareStatement(query);
+			
+			//Set the username parameter in the query filter value
+			statement.setLong(1, routingNum);
+			ResultSet rs = statement.executeQuery();
+			
+			//Step 2
+			if(rs.next()){return true;}else return false;
+			
+		}catch(SQLException e) {
+			logger.debug("FAILURE AT existRoutingNumber() Routing Number ["+routingNum+"]");
+			logger.error(e.getLocalizedMessage());}
+		return false;
+		
+	}
+	
 	//This method will be used to create a new account for Customer
 	public void createAccount(Customer c) {
 		conn = ConnectionManager.getConnection();
@@ -213,7 +235,7 @@ public class AccountDAOImpl implements AccountDAO {
 				
 				while(true) {
 					acc = new Account("checking",c.getUsername(),Double.parseDouble(String.format("%.2f", amount)));
-					if(!this.existAccount(acc.getAccountNumber())) {
+					if(!this.existAccount(acc.getAccountNumber()) && !this.existRoutingNumber(acc.getRoutingNumber())) {
 						break;
 					}
 				}
@@ -229,7 +251,7 @@ public class AccountDAOImpl implements AccountDAO {
 					
 					while(true) {
 						acc = new Account("saving",c.getUsername(),Double.parseDouble(String.format("%.2f", amount)));
-						if(!this.existAccount(acc.getAccountNumber())) {
+						if(!this.existAccount(acc.getAccountNumber()) && !this.existRoutingNumber(acc.getRoutingNumber())) {
 							break;
 						}
 					}
@@ -263,6 +285,12 @@ public class AccountDAOImpl implements AccountDAO {
 					double amount = scan.nextDouble();
 					
 					JointAccount acc = new JointAccount("joint",applicants,Double.parseDouble(String.format("%.2f", amount)));
+					while(true) {
+						acc = new JointAccount("joint",applicants,Double.parseDouble(String.format("%.2f", amount)));
+						if(!this.existAccount(acc.getAccountNumber()) && !this.existRoutingNumber(acc.getRoutingNumber())) {
+							break;
+						}
+					}
 					this.addAccount(acc);
 					JointAccountDAOImpl joint = new JointAccountDAOImpl();
 					joint.createJointAccount(acc);
@@ -342,7 +370,7 @@ public class AccountDAOImpl implements AccountDAO {
 				Scanner scan = new Scanner(System.in);
 				account = scan.nextInt();
 				Account temp = this.getAccount(account);
-				oldBalance = temp.getBalance();
+				oldBalance = Double.parseDouble(String.format("%.2f", temp.getBalance()));
 				
 			
 				System.out.println("How much do you want to deposit?");

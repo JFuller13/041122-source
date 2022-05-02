@@ -2,6 +2,8 @@ package com.revature.model;
 
 import java.util.Random;
 
+import com.revature.dao.AccountDAOImpl;
+
 
 // This class will hold everything that you can do in a bank
 public class Account {

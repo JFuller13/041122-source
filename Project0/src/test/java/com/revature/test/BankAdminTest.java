@@ -1,6 +1,6 @@
 package com.revature.test;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
@@ -13,9 +13,9 @@ public class BankAdminTest {
 	
 	@Test
 	public void testGetEmplyee() {
-		BankAdmin bob = baTest.getEmployee("carsmi1");
+		BankAdmin carlos = baTest.getEmployee("carsmi1");
 		
-		assertNotNull(bob);
+		assertTrue(carlos.getAdmin());
 	}
 
 }

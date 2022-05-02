@@ -6,4 +6,7 @@ public class BankAdmin extends Employee{
 	public BankAdmin(String firstName, String lastName, String username, String password) {
 		super(firstName, lastName, username, password);
 	}
+	
+	public boolean getAdmin() {return admin;}
+	
 }
